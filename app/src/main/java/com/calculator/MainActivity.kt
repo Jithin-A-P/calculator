@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var decIsActive = false
+        val calculator = Calculator()
 
         val dis = findViewById<TextView>(R.id.mainDisplay)
         val opDis = findViewById<TextView>( R.id.opDisplay)
@@ -39,80 +39,87 @@ class MainActivity : AppCompatActivity() {
 
         btnClr.setOnClickListener {
             dis.text = ""
-
-            decIsActive = false
+            calculator.reset()
         }
 
         b1.setOnClickListener {
-            dis.text = dis.text.toString() + '1'
+            calculator.input("1")
+            dis.text = calculator.tmp
         }
 
         b2.setOnClickListener {
-            dis.text = dis.text.toString() + '2'
+            calculator.input("2")
+            dis.text = calculator.tmp
         }
 
         b3.setOnClickListener {
-            dis.text = dis.text.toString() + '3'
+            calculator.input("3")
+            dis.text = calculator.tmp
         }
 
         b4.setOnClickListener {
-            dis.text = dis.text.toString() + '4'
+            calculator.input("4")
+            dis.text = calculator.tmp
         }
 
         b5.setOnClickListener {
-            dis.text = dis.text.toString() + '5'
+            calculator.input("5")
+            dis.text = calculator.tmp
         }
 
         b6.setOnClickListener {
-            dis.text = dis.text.toString() + '6'
+            calculator.input("6")
+            dis.text = calculator.tmp
         }
 
         b7.setOnClickListener {
-            dis.text = dis.text.toString() + '7'
+            calculator.input("7")
+            dis.text = calculator.tmp
         }
 
         b8.setOnClickListener {
-            dis.text = dis.text.toString() + '8'
+            calculator.input("8")
+            dis.text = calculator.tmp
         }
 
         b9.setOnClickListener {
-            dis.text = dis.text.toString() + '9'
+            calculator.input("9")
+            dis.text = calculator.tmp
         }
 
         b0.setOnClickListener {
-            dis.text = dis.text.toString() + '0'
+            calculator.input("0")
+            dis.text = calculator.tmp
         }
 
         btnDec.setOnClickListener {
-            if (!decIsActive) {
-                dis.text = dis.text.toString() + '.'
-                decIsActive = true
-            }
+            calculator.input(".")
+            dis.text = calculator.tmp
         }
 
         btnEql.setOnClickListener {
-            var str = dis.text.toString() + '='
-            decIsActive = true
+            calculator.input("=")
+            dis.text = calculator.tmp
         }
 
         btnAdd.setOnClickListener {
+            calculator.input("+")
             opDis.text = "+"
         }
 
         btnSub.setOnClickListener {
+            calculator.input("-")
             opDis.text = "-"
         }
 
         btnMul.setOnClickListener {
+            calculator.input("*")
             opDis.text = "*"
         }
 
         btnDiv.setOnClickListener {
+            calculator.input("/")
             opDis.text = "/"
-        }
-
-        fun opSelected(c: String) {
-            opDis.text = c
         }
     }
 }

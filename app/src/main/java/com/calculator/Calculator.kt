@@ -41,7 +41,7 @@ class Calculator {
                 }
             } else {
                 tmp = ""
-                eqPressed = false
+                eqPressed = true
                 tmp = str
             }
         }
