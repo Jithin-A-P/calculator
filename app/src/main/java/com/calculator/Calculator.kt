@@ -7,6 +7,7 @@ class Calculator {
     var tmp = ""
     var eqPressed = false
     var decPressed = false
+    var opSelected = false
 
     fun input(str: String) {
         if (str == "+" || str == "-" || str == "*" || str == "/") {
@@ -40,9 +41,8 @@ class Calculator {
                     tmp += str
                 }
             } else {
-                tmp = ""
-                eqPressed = true
-                tmp = str
+                reset()
+                tmp += str
             }
         }
     }
