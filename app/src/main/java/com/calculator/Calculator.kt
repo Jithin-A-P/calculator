@@ -43,7 +43,7 @@ class Calculator {
                     tmp += str
                 }
             } else {
-                tmp += str
+                tmp = str
             }
         }
     }
