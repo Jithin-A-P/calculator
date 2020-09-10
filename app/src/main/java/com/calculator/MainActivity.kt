@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         btnClr.setOnClickListener {
             dis.text = ""
             calculator.reset()
+            opDis.text = calculator.op
         }
 
         b1.setOnClickListener {
@@ -104,22 +105,22 @@ class MainActivity : AppCompatActivity() {
 
         btnAdd.setOnClickListener {
             calculator.input("+")
-            opDis.text = "+"
+            opDis.text = calculator.op
         }
 
         btnSub.setOnClickListener {
             calculator.input("-")
-            opDis.text = "-"
+            opDis.text = calculator.op
         }
 
         btnMul.setOnClickListener {
             calculator.input("*")
-            opDis.text = "*"
+            opDis.text = calculator.op
         }
 
         btnDiv.setOnClickListener {
             calculator.input("/")
-            opDis.text = "/"
+            opDis.text = calculator.op
         }
     }
 }

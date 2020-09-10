@@ -11,7 +11,6 @@ class Calculator {
 
     fun input(str: String) {
         if (str == "+" || str == "-" || str == "*" || str == "/") {
-            decPressed = false
             op = str
             if(!eqPressed) {
                 if (a == 0.0) {
@@ -25,7 +24,10 @@ class Calculator {
             } else {
                 a = tmp.toDouble()
                 b = 0.0
+                tmp = ""
             }
+            eqPressed = false
+            decPressed = false
         } else if (str == "=") {
             b = tmp.toDouble()
             tmp = calculate().toString()
@@ -41,7 +43,6 @@ class Calculator {
                     tmp += str
                 }
             } else {
-                reset()
                 tmp += str
             }
         }
@@ -64,7 +65,7 @@ class Calculator {
     }
 
     fun calculate(): Double {
-        when(op){
+        when(op) {
             "+" -> return a + b
             "-" -> return a - b
             "*" -> return a * b
