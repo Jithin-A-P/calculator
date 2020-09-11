@@ -12,19 +12,22 @@ class Calculator {
     fun input(str: String) {
         if (str == "+" || str == "-" || str == "*" || str == "/") {
             op = str
-            if(!eqPressed) {
-                if (a == 0.0) {
-                    a = tmp.toDouble()
-                    tmp = ""
+            if(!opSelected) {
+                opSelected = true
+                if (!eqPressed) {
+                    if (a == 0.0) {
+                        a = tmp.toDouble()
+                        tmp = ""
+                    } else {
+                        b = tmp.toDouble()
+                        a = calculate()
+                        tmp = ""
+                    }
                 } else {
-                    b = tmp.toDouble()
-                    a = calculate()
+                    a = tmp.toDouble()
+                    b = 0.0
                     tmp = ""
                 }
-            } else {
-                a = tmp.toDouble()
-                b = 0.0
-                tmp = ""
             }
             eqPressed = false
             decPressed = false
@@ -32,7 +35,11 @@ class Calculator {
             b = tmp.toDouble()
             tmp = calculate().toString()
             eqPressed = true
+            if(opSelected)
+                opSelected = false
         } else {
+            if(opSelected)
+                opSelected = false
             if(!eqPressed) {
                 if(str == ".") {
                     if(!decPressed) {
@@ -49,6 +56,8 @@ class Calculator {
     }
 
     fun del() {
+        if(opSelected)
+            opSelected = false
         if(tmp.substring(tmp.length-1) == ".") {
             decPressed = false
         }
@@ -62,6 +71,7 @@ class Calculator {
         tmp = ""
         eqPressed = false
         decPressed = false
+        opSelected = false
     }
 
     fun calculate(): Double {
