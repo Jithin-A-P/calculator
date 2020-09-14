@@ -10,11 +10,11 @@ class Calculator {
     var opSelected = false
 
     fun input(str: String) {
-        if (str == "+" || str == "-" || str == "*" || str == "/") {
+        if(str == "+" || str == "-" || str == "*" || str == "/") {
             op = str
             if(!opSelected) {
                 opSelected = true
-                if (!eqPressed) {
+                if(!eqPressed) {
                     if (a == 0.0) {
                         a = tmp.toDouble()
                         tmp = ""
@@ -38,8 +38,6 @@ class Calculator {
             if(opSelected)
                 opSelected = false
         } else {
-            if(opSelected)
-                opSelected = false
             if(!eqPressed) {
                 if(str == ".") {
                     if(!decPressed) {
@@ -52,6 +50,8 @@ class Calculator {
             } else {
                 tmp = str
             }
+            if(opSelected)
+                opSelected = false
         }
     }
 

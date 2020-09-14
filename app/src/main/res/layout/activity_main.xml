@@ -21,21 +21,29 @@
                 android:id="@+id/opDisplay"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:gravity="center"
                 android:textSize="28sp" />
 
-            <TextView
-                android:id="@+id/subDisplay2"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:gravity="right"
-                android:textSize="28sp"/>
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/subDisplay1"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:gravity="right"
-                android:textSize="28sp"/>
+                <TextView
+                    android:id="@+id/subDisplay1"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="right"
+                    android:textSize="28sp"/>
+
+                <TextView
+                    android:id="@+id/subDisplay2"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="right"
+                    android:textSize="28sp"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -53,6 +61,42 @@
         android:layout_height="match_parent"
         android:columnCount="4"
         android:rowCount="5">
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:text=""
+            android:textSize="32sp" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:text=""
+            android:textSize="32sp" />
+
+        <Button
+            android:id="@+id/btndel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:text="del"
+            android:textSize="28sp" />
+
+        <Button
+            android:id="@+id/n4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:text="C"
+            android:textSize="32sp" />
 
         <Button
             android:id="@+id/n1"
@@ -82,12 +126,13 @@
             android:textSize="32sp" />
 
         <Button
-            android:id="@+id/n4"
+            android:id="@+id/n8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:text="C"
+            android:layout_weight="1"
+            android:text="/"
             android:textSize="32sp" />
 
         <Button
@@ -118,14 +163,14 @@
             android:textSize="32sp" />
 
         <Button
-            android:id="@+id/n8"
+            android:id="@+id/n12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="*"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_weight="1"
-            android:text="/"
-            android:textSize="32sp" />
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/n9"
@@ -153,17 +198,6 @@
             android:layout_columnWeight="1"
             android:text="3"
             android:textSize="32sp" />
-
-        <Button
-            android:id="@+id/n12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="*"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:textSize="24sp" />
-
 
         <Button
             android:id="@+id/n16"

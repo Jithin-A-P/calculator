@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,7 +15,8 @@ class MainActivity : AppCompatActivity() {
         val calculator = Calculator()
 
         val dis = findViewById<TextView>(R.id.mainDisplay)
-        val opDis = findViewById<TextView>( R.id.opDisplay)
+        val opDis = findViewById<TextView>(R.id.opDisplay)
+        val btnDel = findViewById<Button>(R.id.btndel)
 
         val b7 = findViewById<Button>(R.id.n1)
         val b8 = findViewById<Button>(R.id.n2)
@@ -40,6 +42,8 @@ class MainActivity : AppCompatActivity() {
         btnClr.setOnClickListener {
             dis.text = ""
             calculator.reset()
+            subDisplay1.text = calculator.getA()
+            subDisplay2.text = calculator.getB()
             opDis.text = calculator.op
         }
 
@@ -100,27 +104,42 @@ class MainActivity : AppCompatActivity() {
 
         btnEql.setOnClickListener {
             calculator.input("=")
+            subDisplay1.text = calculator.getA()
+            subDisplay2.text = calculator.getB()
             dis.text = calculator.tmp
         }
 
         btnAdd.setOnClickListener {
             calculator.input("+")
+            subDisplay1.text = calculator.getA()
+            subDisplay2.text = calculator.getB()
             opDis.text = calculator.op
         }
 
         btnSub.setOnClickListener {
             calculator.input("-")
+            subDisplay1.text = calculator.getA()
+            subDisplay2.text = calculator.getB()
             opDis.text = calculator.op
         }
 
         btnMul.setOnClickListener {
             calculator.input("*")
+            subDisplay1.text = calculator.getA()
+            subDisplay2.text = calculator.getB()
             opDis.text = calculator.op
         }
 
         btnDiv.setOnClickListener {
             calculator.input("/")
+            subDisplay1.text = calculator.getA()
+            subDisplay2.text = calculator.getB()
             opDis.text = calculator.op
+        }
+
+        btndel.setOnClickListener{
+            calculator.del()
+            dis.text = calculator.tmp
         }
     }
 }
