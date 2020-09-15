@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         val dis = findViewById<TextView>(R.id.mainDisplay)
         val opDis = findViewById<TextView>(R.id.opDisplay)
         val btnDel = findViewById<Button>(R.id.btndel)
+        val btnPow = findViewById<Button>(R.id.btnPow)
 
         val b7 = findViewById<Button>(R.id.n1)
         val b8 = findViewById<Button>(R.id.n2)
@@ -132,6 +133,13 @@ class MainActivity : AppCompatActivity() {
 
         btnDiv.setOnClickListener {
             calculator.input("/")
+            subDisplay1.text = calculator.getA()
+            subDisplay2.text = calculator.getB()
+            opDis.text = calculator.op
+        }
+
+        btnPow.setOnClickListener {
+            calculator.input("^")
             subDisplay1.text = calculator.getA()
             subDisplay2.text = calculator.getB()
             opDis.text = calculator.op

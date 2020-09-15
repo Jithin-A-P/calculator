@@ -10,7 +10,7 @@ class Calculator {
     var opSelected = false
 
     fun input(str: String) {
-        if(str == "+" || str == "-" || str == "*" || str == "/") {
+        if(str == "+" || str == "-" || str == "*" || str == "/" || str == "^") {
             op = str
             if(!opSelected) {
                 opSelected = true
@@ -80,6 +80,7 @@ class Calculator {
             "-" -> return a - b
             "*" -> return a * b
             "/" -> return a / b
+            "^" -> return Math.pow(a, b)
         }
         return 0.0
     }
